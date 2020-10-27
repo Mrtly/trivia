@@ -7,13 +7,9 @@
       </div>
     </div>
     <div id="alert">
-      <!--This is an alert box.-->
+      <!--alert box populated with answer feedback-->
     </div>
-    <!-- <div> //used in development for quick nexting :)
-      <button v-on:click="nextRound">next</button>
-    </div>-->
     <br />
-
     <div id="gamebar">
       <p>
         round:
@@ -35,13 +31,11 @@ export default {
   name: "Game",
   store,
   mounted: function() {
-    this.$store.state.score = 0;
-    this.$store.state.round = 1;
     this.gameOn();
   },
   data() {
     return {
-      isActive: true
+      isActive: true //will turn false on button click to disable buttons
     };
   },
   computed: {
@@ -99,13 +93,15 @@ export default {
   },
   methods: {
     gameOn() {
+      this.$store.state.score = 0; //resetting for a fresh start
+      this.$store.state.round = 1; //same^
       store.commit("startGame");
-      console.log("game : " + this.$store.state.gameOn); //for peace of mind
+      // console.log("game : " + this.$store.state.gameOn); //for peace of mind
       return this.$store.state.gameOn;
     },
     gameOff() {
       store.commit("endGame");
-      console.log("game : " + this.$store.state.gameOn); //for peace of mind
+      // console.log("game : " + this.$store.state.gameOn); //for peace of mind
       this.$router.push({ path: "/gameover" });
       return this.$store.state.gameOn;
     },
@@ -147,7 +143,7 @@ export default {
 
 #alert {
   margin-top: 1em;
-  height: 2em;
+  height: 2em; //fixed even if empty
   font-size: 1.3em;
 }
 
