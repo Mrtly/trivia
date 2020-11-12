@@ -16,5 +16,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgb(118, 185, 155);
+  background: linear-gradient(
+    0deg,
+    rgb(79, 151, 167) 0%,
+    rgba(162, 213, 190, 1) 100%
+  );
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
 </style>
