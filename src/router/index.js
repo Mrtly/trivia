@@ -3,12 +3,14 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Game from "@/views/Game.vue"
 import GameOver from "@/views/GameOver.vue"
+import VueMeta from 'vue-meta'
 
 Vue.use(VueRouter)
+Vue.use(VueMeta)
 
 const routes = [
   {
-    path: '/',
+    path: '',
     name: 'home',
     component: Home
   },

@@ -4,6 +4,30 @@
   </div>
 </template>
 
+<script>
+let ROOT_PATH = "https://vue-trivia.vercel.app";
+export default {
+  name: "app",
+  data() {
+    return {
+      screenshot: ROOT_PATH + require("./assets/screenshot.png")
+    };
+  },
+  metaInfo() {
+    return {
+      meta: [
+        { property: "og:title", content: "Trivia" },
+        { property: "og:image", content: this.screenshot },
+        {
+          property: "og:description",
+          content: "a trivia game built with Vue"
+        }
+      ]
+    };
+  }
+};
+</script>
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
