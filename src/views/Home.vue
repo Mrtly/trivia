@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <router-link to="/game">
-      <button>play a trivia game with 10 questions</button>
+      <button>play</button>
     </router-link>
   </div>
 </template>
